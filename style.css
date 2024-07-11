@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* Global Styles */
 * {
   padding: 0;
   margin: 0;
@@ -7,50 +8,63 @@
   font-family: "Roboto Mono", sans-serif;
 }
 
+/* Body Styles */
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-inline: auto;
-  height: 100dvh;
-  background-color: #f3f3f3;
+  align-items: center;
+  height: 100vh;
   padding: 1rem;
   background-color: #131212;
   color: white;
-  align-items: center;
 }
 
+/* Title Styles */
 .title {
   text-align: center;
   font-size: 1.5rem;
   color: #787878;
 }
 
+/* Card Styles */
 .card {
   background-color: #1f1f1f;
   padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  width: clamp(200px, 100%, 600px);
 }
 
+/* Password Input Styles */
 #passwordInput {
   margin-top: 2rem;
   height: 2rem;
 }
 
-.password {
+/* Password Field Styles */
+.password-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
   border: 1px solid rgb(154, 208, 154);
-  margin-block: 2rem;
   background-color: #1f1f1f;
   color: rgb(88, 86, 86);
   padding: 1rem;
-  width: clamp(200px, 100%, 400px);
+  width: clamp(200px, 100%, 600px);
   text-align: center;
   font-weight: bold;
-  margin-inline: auto;
 }
 
+/* Clipboard Styles */
+.clipboard {
+  cursor: pointer;
+  user-select: none;
+  color: rgb(154, 208, 154);
+  font-size: 1.25rem;
+}
+
+/* Small Text Styles */
 small {
   text-align: center;
   display: block;
@@ -61,10 +75,12 @@ small {
   user-select: none;
 }
 
+/* Label Styles */
 label {
   display: block;
 }
 
+/* Length Slider Styles */
 .length {
   width: 100%;
   appearance: none;
@@ -95,6 +111,7 @@ label {
   cursor: pointer;
 }
 
+/* Label Group Styles */
 .label-group {
   display: flex;
   justify-content: space-between;
@@ -102,11 +119,13 @@ label {
   margin-bottom: 1rem;
 }
 
+/* Length Label Styles */
 .length-label {
   display: block;
   text-align: center;
 }
 
+/* Length Display Styles */
 .length-display {
   font-weight: bold;
   text-align: center;
@@ -114,6 +133,7 @@ label {
   font-size: 1.5rem;
 }
 
+/* Checkbox Styles */
 input[type="checkbox"] {
   border: none;
   outline: none;
@@ -127,10 +147,12 @@ input[type="checkbox"]:checked {
   background-color: rgb(154, 208, 154);
 }
 
+/* Fieldset Styles */
 fieldset {
   border: none;
 }
 
+/* Form Group Styles */
 .form-group {
   border: none;
   display: flex;
@@ -140,22 +162,34 @@ fieldset {
   margin-bottom: 1.5rem;
 }
 
+/* Button Styles */
 button {
   outline: none;
   border: none;
   width: 100%;
-  margin-inline: auto;
+  margin: 0 auto;
   padding: 0.75rem 2rem;
   background-color: rgb(154, 208, 154);
   font-size: 1rem;
   font-weight: 700;
 }
 
+button:hover {
+  background-color: rgb(119, 163, 119);
+}
+
+button:disabled {
+  background-color: #787878;
+  cursor: not-allowed;
+}
+
+/* Arrow Icon Styles */
 .fa-arrow-right {
   margin-left: 1rem;
   font-size: 0.75rem;
 }
 
+/* Indicator Styles */
 .indicator {
   background-color: #131212;
   padding: 1rem;
@@ -167,11 +201,21 @@ button {
   align-items: center;
 }
 
+/* Bars Styles */
 .bars {
   display: flex;
   align-items: center;
 }
 
+/* Bar Styles */
+.bar {
+  height: 20px;
+  width: 8px;
+  margin: 0.2rem;
+  background-color: none;
+}
+
+/* Strength Label Styles */
 .strength-label {
   font-weight: bold;
   text-align: center;
@@ -180,13 +224,7 @@ button {
   color: #727171;
 }
 
-.bar {
-  height: 20px;
-  width: 8px;
-  margin: 0.2rem;
-  background-color: none;
-}
-
+/* Strength Bar Label Styles */
 .strength-bar-label {
   font-weight: bold;
   text-align: center;
@@ -196,6 +234,7 @@ button {
   margin-right: 0.5rem;
 }
 
+/* Fill Styles */
 .fill {
   background-color: #e2e182;
 }

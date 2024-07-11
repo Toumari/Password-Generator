@@ -6,11 +6,20 @@ const checkboxes = document.querySelectorAll("input[type=checkbox]");
 const indicators = document.querySelectorAll(".indicator .bar");
 const strengthBarLabel = document.querySelector(".strength-bar-label");
 const small = document.querySelector("small");
+const clipboard = document.querySelector(".clipboard");
 
 let strength = 0;
 
 slider.addEventListener("input", () => {
   lengthDisplay.innerText = slider.value;
+});
+
+slider.addEventListener("change", () => {
+  if (slider.value == 0) {
+    submitBtn.disabled = true;
+  } else {
+    submitBtn.disabled = false;
+  }
 });
 
 checkboxes.forEach((checkbox) => {
@@ -29,12 +38,10 @@ const updateStrength = () => {
 
   if (!strength) {
     strengthBarLabel.innerText = "";
+    submitBtn.disabled = true;
   } else if (strength) {
+    submitBtn.disabled = false;
     strengthBarLabel.innerText = strengths[strength - 1];
-  }
-
-  if (slider.value === 0) {
-    passwordDisplay.innerText = "P$ssw0rd";
   }
 };
 
@@ -77,5 +84,23 @@ slider.addEventListener("input", (event) => {
 });
 
 submitBtn.addEventListener("click", generatePassword);
+
+clipboard.addEventListener("click", () => {
+  const textarea = document.createElement("textarea");
+  const password = passwordDisplay.innerText;
+
+  if (!password || password === "P$ssw0rd") {
+    alert("No password to copy");
+    return;
+  }
+
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+
+  alert("Password copied to clipboard");
+});
 
 updateStrength();
