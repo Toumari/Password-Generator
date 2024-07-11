@@ -47,13 +47,16 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 2rem auto;
-  border: 1px solid rgb(154, 208, 154);
   background-color: #1f1f1f;
   color: rgb(88, 86, 86);
   padding: 1rem;
   width: clamp(200px, 100%, 600px);
   text-align: center;
   font-weight: bold;
+}
+
+.password-field:focus {
+  border: 1px solid rgb(154, 208, 154);
 }
 
 /* Clipboard Styles */
@@ -175,7 +178,10 @@ button {
 }
 
 button:hover {
-  background-color: rgb(119, 163, 119);
+  outline: 2px solid rgb(119, 163, 119);
+  background-color: transparent;
+  color: rgb(154, 208, 154);
+  font-weight: 700;
 }
 
 button:disabled {
