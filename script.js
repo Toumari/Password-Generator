@@ -15,7 +15,7 @@ slider.addEventListener("input", () => {
 });
 
 slider.addEventListener("change", () => {
-  if (slider.value == 0) {
+  if (slider.value == 0 || strength == 0) {
     submitBtn.disabled = true;
   } else {
     submitBtn.disabled = false;
@@ -36,7 +36,7 @@ const updateStrength = () => {
     bar.style.backgroundColor = index < strength ? "#e2e182" : "grey";
   });
 
-  if (!strength) {
+  if (!strength || slider.value == 0) {
     strengthBarLabel.innerText = "";
     submitBtn.disabled = true;
   } else if (strength) {
