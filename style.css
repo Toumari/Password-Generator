@@ -177,7 +177,7 @@ button {
   font-weight: 700;
 }
 
-button:hover {
+button:not(:disabled):hover {
   outline: 2px solid rgb(119, 163, 119);
   background-color: transparent;
   color: rgb(154, 208, 154);
